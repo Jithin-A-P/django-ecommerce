@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +10,11 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -76,8 +77,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
+            <a href="https://github.com/mdbootstrap/bootstrap-material-design"
+              class="nav-link border border-light rounded waves-effect" target="_blank">
               <i class="fab fa-github mr-2"></i>MDB GitHub
             </a>
           </li>
@@ -112,7 +113,7 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge purple mr-1">Category 2</span>
+                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
               </a>
               <a href="">
                 <span class="badge blue mr-1">New</span>
@@ -126,7 +127,7 @@
               <span class="mr-1">
                 <del>$200</del>
               </span>
-              <span>$100</span>
+              <span>${{ object.price }}</span>
             </p>
 
             <p class="lead font-weight-bold">Description</p>
@@ -212,11 +213,12 @@
 
     <!--Call to action-->
     <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download MDB
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
+        target="_blank" role="button">Download MDB
         <i class="fas fa-download ml-2"></i>
       </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank"
+        role="button">Start
         free tutorial
         <i class="fas fa-graduation-cap ml-2"></i>
       </a>
@@ -273,13 +275,13 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
